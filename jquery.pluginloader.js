@@ -14,8 +14,10 @@
             $this.context = $this[0] = this;
 
             var key, value, args
-              , plugins = $this.data('plugin')
+              , plugins = $this.data('plugin') || ""
               , isMap = plugins.indexOf(':') > -1;
+
+            if (!plugins.length) { return; }
 
             if (!isMap) {
                 plugins += ": [null]";
