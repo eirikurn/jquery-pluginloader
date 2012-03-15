@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" media="screen" />
+	<script src="http://code.jquery.com/qunit/git/qunit.js"></script>
+	<script src="jquery.pluginloader.js"></script>
+	<script>
+	var iWasCalled = false;
+	$.fn.initPlugin = function(options) {
+		iWasCalled = true;
+	};
+		
+	$(function(){
+		test("is plugin called on load", function() {
+			ok(iWasCalled, "Plugin was called");
+		});
+	
+		asyncTest("a basic test example", function() {
+			$.fn.testPlugin = function(options) {
+				equal(options.name, "thorsteinsson");
+				equal(options.foo.bar, 1337);
+				start();
+			};
+			$('<div data-plugin="testPlugin: {name: \'thorsteinsson\', foo: { bar: 1337 }}" />').loadPlugins();
+		});
+
+	});
+	</script>
+  
+</head>
+<body>
+	<h1 id="qunit-header">jQuery Plugin Loader</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">
+		<div data-plugin="initPlugin" />
+	</div>
+</body>
+</html>
