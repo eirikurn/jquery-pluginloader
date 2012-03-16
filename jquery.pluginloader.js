@@ -34,6 +34,8 @@
                 }
             }
         });
+
+        return this;
     };
 
     $(function() {
