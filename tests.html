@@ -22,7 +22,18 @@
 				equal(options.foo.bar, 1337);
 				start();
 			};
-			$('<div data-plugin="testPlugin: {name: \'thorsteinsson\', foo: { bar: 1337 }}" />').loadPlugins();
+			$('<div data-plugin="testPlugin: {name: \'thorsteinsson\', foo: { bar: 1337 }}"></div>').loadPlugins();
+		});
+	
+		asyncTest("multiple plugins on one element", function() {
+			$.fn.plugin1 = function(options) {
+				ok(true, "Plugin 1 was called");
+			};
+			$.fn.plugin2 = function(options) {
+				ok(true, "Plugin 2 was called");
+				start();
+			};
+			$('<div data-plugin="plugin1;plugin2"></div>').loadPlugins();
 		});
 
 	});

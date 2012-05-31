@@ -14,14 +14,17 @@
             $this.context = $this[0] = this;
 
             var key, value, args
-              , plugins = $this.data('plugin') || ""
-              , isMap = plugins.indexOf(':') > -1;
+              , plugins = $this.data('plugin') || "";
 
             if (!plugins.length) { return; }
 
-            if (!isMap) {
-                plugins += ": [null]";
-            }
+            plugins = $.map(plugins.split(';'), function(item) {
+                if (!~item.indexOf(':')) {
+                    return item + ": [null]";
+                }
+                return item;
+            }).join(',');
+
             plugins = "({" + plugins + "})";
             plugins = eval(plugins);
 
