@@ -18,7 +18,7 @@
 
             if (!plugins.length) { return; }
 
-            plugins = $.map(plugins.split(';'), function(item) {
+            plugins = $.map(plugins.split(','), function(item) {
                 if (!~item.indexOf(':')) {
                     return item + ": [null]";
                 }

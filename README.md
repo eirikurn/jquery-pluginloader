@@ -42,7 +42,7 @@ jQuery UI Slider
 
 Multiple plugins on one element, jQuery UI Draggable Button
 
-    <button data-plugin="button; draggable">A draggable button</button>
+    <button data-plugin="button, draggable">A draggable button</button>
 
 ## License
 
