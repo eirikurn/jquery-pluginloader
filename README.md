@@ -40,6 +40,10 @@ jQuery UI Slider
 
     <div data-plugin="slider:{max: 50}"></div>
 
+Multiple plugins on one element, jQuery UI Draggable Button
+
+    <button data-plugin="button, draggable">A draggable button</button>
+
 ## License
 
 (The MIT License)
