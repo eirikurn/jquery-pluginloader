@@ -13,8 +13,8 @@
         this.find('*[data-plugin]').add(this).each(function() {
             $this.context = $this[0] = this;
 
-            var key, value, args
-              , plugins = $this.data('plugin') || "";
+            var key, value, args,
+              plugins = $this.data('plugin') || "";
 
             if (!plugins.length) { return; }
 
@@ -43,4 +43,4 @@
         $(document.body).loadPlugins();
     });
 
-})(jQuery);
+})(window.jQuery || window.Zepto);
