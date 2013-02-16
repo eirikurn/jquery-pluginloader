@@ -22,9 +22,7 @@
                 plugins += ": [null]";
             }
 
-            plugins = "({" + plugins + "})";
-            console.log(plugins);
-            plugins = eval(plugins);
+            plugins = eval("({" + plugins + "})");
 
             for (key in plugins) {
                 if (plugins.hasOwnProperty(key) && key in $.fn) {
