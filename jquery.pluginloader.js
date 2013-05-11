@@ -13,17 +13,16 @@
         this.find('*[data-plugin]').add(this).each(function() {
             $this.context = $this[0] = this;
 
-            var key, value, args
-              , plugins = $this.data('plugin') || ""
-              , isMap = plugins.indexOf(':') > -1;
+            var key, value, args,
+              plugins = $this.data('plugin') || "";
 
             if (!plugins.length) { return; }
 
-            if (!isMap) {
+            if (!~plugins.indexOf(':')) {
                 plugins += ": [null]";
             }
-            plugins = "({" + plugins + "})";
-            plugins = eval(plugins);
+
+            plugins = eval("({" + plugins + "})");
 
             for (key in plugins) {
                 if (plugins.hasOwnProperty(key) && key in $.fn) {
@@ -42,4 +41,4 @@
         $(document.body).loadPlugins();
     });
 
-})(jQuery);
+})(window.jQuery || window.Zepto);
