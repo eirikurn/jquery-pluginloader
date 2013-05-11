@@ -1,27 +1,14 @@
 {
   "name": "pluginloader",
-  "title": "jQuery Plugin Loader",
-  "description": "Initializes jQuery plugins on DOM using a data-plugin attribute.",
-  "version": "1.0.0-pre",
-  "homepage": "http://aranja.is",
-  "author": {
-    "name": "Aranja",
-    "url": "http://aranja.is"
-  },
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/thorsteinsson/jquery-pluginloader.git"
-  },
-  "bugs": {
-    "url": "https://github.com/thorsteinsson/jquery-pluginloader/issues"
   },
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/thorsteinsson/jquery-pluginloader/blob/master/MIT-LICENSE.txt"
     }
-  ],
-  "dependencies": {},
-  "devDependencies": {},
-  "keywords": []
+  ]
 }
